@@ -39,3 +39,10 @@ jkp_admin_product_delete:
     methods:  [POST]
     requirements:
         id:  \d+
+
+jkp_admin_product_delete_image:
+    path: /product/delete-image/{id}
+    defaults: { _controller: JKPAdminBundle:Product:deleteImage }
+    methods:  [POST]
+    requirements:
+        id:  \d+

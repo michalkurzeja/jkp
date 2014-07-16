@@ -76,7 +76,7 @@ class Product implements Translatable
     /**
      * @var File
      *
-     * @ORM\OneToOne(targetEntity="File", cascade={"persist", "remove"}, fetch="EAGER")
+     * @ORM\OneToOne(targetEntity="File", cascade={"persist", "remove"}, orphanRemoval=true, fetch="EAGER")
      */
     private $image;
 
@@ -231,6 +231,12 @@ class Product implements Translatable
     public function getImage()
     {
         return $this->image;
+    }
+
+    public function removeImage()
+    {
+        $this->image = null;
+        return $this;
     }
 
     public function setTranslatableLocale($locale)

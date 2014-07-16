@@ -42,10 +42,11 @@
                 <div class="field-wrap">{{ form_widget(form.image) }}</div>
 
                 {% if product.image %}
-                    <div>
+                    <div id="img-preview">
                         <div class="col-lg-3"><label class="control-label">Obecny obraz:</label></div>
                         <div class="col-lg-8">
                             <img src="/{{ product.image.webPath }}" alt="obraz" class="img-thumbnail" width="200" />
+                            <button type="button" data-href="{{ path('jkp_admin_product_delete_image', { 'id': product.id }) }}" class="btn btn-link delete" style="vertical-align:top"><span class="glyphicon glyphicon-trash"></span> Usuń</button>
                         </div>
                     </div>
                 {% endif %}
@@ -61,4 +62,16 @@
             </div>
         </div>
     </form>
+
+    <script type="text/javascript">
+        $(function() {
+            $('.delete').click(function() {
+                $.post($(this).data('href'), function(response) {
+                    if (response) {
+                        $('#img-preview').remove();
+                    }
+                })
+            });
+        });
+    </script>
 {% endblock content %}

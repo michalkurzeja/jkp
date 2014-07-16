@@ -6,6 +6,7 @@ use JKP\AdminBundle\Form\Type\ProductType;
 use JKP\CoreBundle\Entity\Product;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 
 class ProductController extends Controller
@@ -90,5 +91,13 @@ class ProductController extends Controller
         $this->getDoctrine()->getManager()->flush();
 
         return $this->redirect($this->generateUrl('jkp_admin_product'));
+    }
+
+    public function deleteImageAction(Product $product)
+    {
+        $product->removeImage();
+        $this->getDoctrine()->getManager()->flush();
+
+        return new JsonResponse(true);
     }
 } 
