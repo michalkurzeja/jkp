@@ -21,5 +21,8 @@
 # PHPUnit
 /app/phpunit.xml
 
+# Composer
+/composer.lock
+
 # IDE
 /.idea
