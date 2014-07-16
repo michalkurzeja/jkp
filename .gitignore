@@ -23,3 +23,6 @@
 
 # Composer PHAR
 /composer.phar
+
+# IDE
+/.idea

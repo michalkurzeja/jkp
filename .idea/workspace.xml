@@ -49,7 +49,7 @@
       <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="13" selection-start="110" selection-end="110" vertical-scroll-proportion="0.12514484" vertical-offset="0" max-vertical-offset="863">
+            <state line="27" column="1" selection-start="347" selection-end="347" vertical-scroll-proportion="0.5631518" vertical-offset="0" max-vertical-offset="863">
               <folding />
             </state>
           </provider>
@@ -89,7 +89,7 @@
       <file leaf-file-name="edit.html.twig" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/edit.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="16" selection-start="1509" selection-end="1823" vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="1080">
+            <state line="44" column="24" selection-start="2186" selection-end="2186" vertical-scroll-proportion="-25.814816" vertical-offset="95" max-vertical-offset="1242">
               <folding />
             </state>
           </provider>
@@ -147,10 +147,10 @@
         <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Form/Type/FileImageType.php" />
         <option value="$PROJECT_DIR$/src/JKP/CoreBundle/Entity/Product.php" />
         <option value="$PROJECT_DIR$/src/JKP/CoreBundle/Entity/File.php" />
-        <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/new.html.twig" />
         <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Form/Type/ProductType.php" />
         <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Controller/ProductController.php" />
+        <option value="$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/edit.html.twig" />
         <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
@@ -950,13 +950,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="16" selection-start="1509" selection-end="1823" vertical-scroll-proportion="-22.0" vertical-offset="0" max-vertical-offset="1080">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state line="37" column="22" selection-start="1797" selection-end="1797" vertical-scroll-proportion="-17.814816" vertical-offset="185" max-vertical-offset="1098">
@@ -992,9 +985,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/JKP/AdminBundle/Resources/views/Product/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="44" column="24" selection-start="2186" selection-end="2186" vertical-scroll-proportion="-25.814816" vertical-offset="95" max-vertical-offset="1242">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="13" selection-start="110" selection-end="110" vertical-scroll-proportion="0.12514484" vertical-offset="0" max-vertical-offset="863">
+        <state line="27" column="1" selection-start="347" selection-end="347" vertical-scroll-proportion="0.5631518" vertical-offset="0" max-vertical-offset="863">
           <folding />
         </state>
       </provider>
