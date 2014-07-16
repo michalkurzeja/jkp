@@ -1,0 +1,7 @@
+parameters:
+#    jkp_core.example.class: JKP\CoreBundle\Example
+
+services:
+#    jkp_core.example:
+#        class: %jkp_core.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

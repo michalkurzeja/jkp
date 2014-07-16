@@ -1,0 +1,55 @@
+{% extends 'JKPAdminBundle::layout.html.twig' %}
+{% block header %}
+    <h1>Edycja Produktu</h1>
+{% endblock header %}
+{% block content %}
+    {% form_theme form 'JKPAdminBundle:Form:fields.html.twig' %}
+    <form class="contain-floats" action="{{ path('jkp_admin_product_edit', { 'id': product.id }) }}" method="post" {{ form_enctype(form) }}>
+        <ul class="nav nav-tabs" role="tablist">
+            <li class="active"><a href="#pl" role="tab" data-toggle="tab">PL</a></li>
+            <li><a href="#en" role="tab" data-toggle="tab">EN</a></li>
+            <li><a href="#hu" role="tab" data-toggle="tab">HU</a></li>
+            <li><a href="#general" role="tab" data-toggle="tab">Ogólne</a></li>
+        </ul>
+
+        {{ form_errors(form) }}
+
+        <div class="tab-content">
+            <div class="tab-pane active" id="pl">
+                <div class="field-wrap">{{ form_row(form.namePL) }}</div>
+                <div class="field-wrap">{{ form_row(form.descriptionPL) }}</div>
+            </div>
+
+            <div class="tab-pane" id="en">
+                <div class="field-wrap">{{ form_row(form.nameEN) }}</div>
+                <div class="field-wrap">{{ form_row(form.descriptionEN) }}</div>
+            </div>
+
+            <div class="tab-pane" id="hu">
+                <div class="field-wrap">{{ form_row(form.nameHU) }}</div>
+                <div class="field-wrap">{{ form_row(form.descriptionHU) }}</div>
+            </div>
+
+            <div class="tab-pane" id="general">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-3">
+                        <span class=" info-note">Dozwolone są <strong>litery</strong>, <strong>cyfry</strong> oraz znaki: <Strong>-</Strong>, <Strong>+</Strong>, <Strong>_</Strong></span>
+                    </div>
+                </div>
+                <div class="field-wrap">{{ form_row(form.slug) }}</div>
+                <div class="field-wrap">{{ form_row(form.featured) }}</div>
+                <div class="field-wrap">{{ form_row(form.active) }}</div>
+                <div class="field-wrap">{{ form_widget(form.image) }}</div>
+            </div>
+        </div>
+
+        {{ form_rest(form) }}
+
+        <div class="col-lg-offset-3 col-lg-8">
+            <div class="buttons-wrap inline-block">
+                <a href="{{ path('jkp_admin_product') }}" class="btn btn-default"><span class="glyphicon glyphicon-chevron-left"></span> Cofnij</a>
+                <button type="submit" class="btn btn-primary">Zapisz <span class="glyphicon glyphicon-chevron-right"></span></button>
+            </div>
+        </div>
+    </form>
+{% endblock content %}

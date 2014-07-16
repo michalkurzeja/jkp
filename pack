@@ -1,0 +1,2 @@
+#!/bin/bash
+tar cfz jkp.tar.gz ./*

@@ -1,0 +1,41 @@
+jkp_admin_login:
+    path:     /login
+    defaults: { _controller: JKPAdminBundle:Security:login }
+
+jkp_admin_login_check:
+    path: /login_check
+
+jkp_admin_logout:
+    path: /logout
+
+jkp_admin_homepage:
+    path: /
+    defaults: { _controller: JKPAdminBundle:Default:index }
+
+jkp_admin_product:
+    path: /product
+    defaults: { _controller: JKPAdminBundle:Product:index }
+
+jkp_admin_product_new:
+    path: /product/new
+    defaults: { _controller: JKPAdminBundle:Product:new }
+
+jkp_admin_product_edit:
+    path: /product/edit/{id}
+    defaults: { _controller: JKPAdminBundle:Product:edit }
+    requirements:
+        id:  \d+
+
+jkp_admin_product_switch:
+    path: /product/switch/{id}
+    defaults: { _controller: JKPAdminBundle:Product:switch }
+    methods:  [POST]
+    requirements:
+        id:  \d+
+
+jkp_admin_product_delete:
+    path: /product/delete/{id}
+    defaults: { _controller: JKPAdminBundle:Product:delete }
+    methods:  [POST]
+    requirements:
+        id:  \d+

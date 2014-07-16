@@ -1,0 +1,9 @@
+jkp_admin:
+    resource: "@JKPAdminBundle/Resources/config/routing.yml"
+    prefix:   /admin
+
+jkp_core:
+    resource: "@JKPCoreBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/
+    requirements:
+          _locale: pl|en|hu

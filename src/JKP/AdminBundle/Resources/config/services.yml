@@ -1,0 +1,11 @@
+parameters:
+#    jkp_admin.example.class: JKP\AdminBundle\Example
+
+services:
+#    jkp_admin.example:
+#        class: %jkp_admin.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+    jkp_admin.translations:
+        class: JKP\AdminBundle\DependencyInjection\Translations
+        arguments: [@doctrine.orm.entity_manager]

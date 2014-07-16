@@ -1,0 +1,7 @@
+jkp_core_homepage:
+    path:     /
+    defaults: { _controller: JKPCoreBundle:Default:index }
+
+jkp_core_products:
+    path:     /products
+    defaults: { _controller: JKPCoreBundle:Product:index }

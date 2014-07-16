@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>jakurapazurem Admin</title>
+
+    {# CSS #}
+    <link href="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <link href="/resources/css/style.css" type="text/css" rel="stylesheet" />
+    {# /CSS #}
+
+    {# JS #}
+    <script src="/resources/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/resources/js/bootbox.min.js"></script>
+    {# /JS #}
+</head>
+<body>
+    {% block body %}
+        {% block nav %}
+            {% include 'JKPAdminBundle:_parts:nav.html.twig' %}
+        {% endblock nav %}
+        <div id="wrapper-main">
+            {% block header %}
+            {% endblock header %}
+
+            {% block content %}
+            {% endblock content %}
+
+            {% block footer %}
+            <section id="footer">
+                <a href="{{ path('jkp_core_homepage') }}">jakurapazurem.pl</a>
+                <div class="author">
+                    <span>Autor: Michał Kurzeja</span>
+                    <a href="mailto:mike.kurzeja@gmail.com">mike.kurzeja@gmail.com</a>
+                </div>
+            </section>
+            {% endblock footer %}
+        </div>
+    {% endblock body %}
+</body>
+</html>

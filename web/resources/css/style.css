@@ -1,0 +1,64 @@
+/* Helper Classes */
+.bold { font-weight:bold; }
+.inline-block { display: inline-block }
+.contain-floats { overflow:hidden }
+.field-wrap { overflow: hidden; margin: 10px 0; }
+/* -------------- */
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+#wrapper-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#login-wrap {
+    margin: 0 auto;
+    padding: 30px;
+    max-width: 500px;
+}
+
+#form-login button {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#footer .author span {
+    display: block;
+}
+
+.buttons-wrap {
+    float: right;
+}
+
+.table-empty-row {
+    text-align: center;
+}
+
+td.actions {
+    text-align: right;
+}
+
+.form-errors {
+    color: red;
+}
+
+.form-errors ul {
+    padding: 0;
+}
+
+.form-errors li {
+    list-style-type: none;
+}
+
+.info-note {
+    font-size: 10px;
+    color: grey;
+}
