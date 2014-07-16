@@ -1,0 +1,73 @@
+{% extends 'JKPAdminBundle::layout.html.twig' %}
+{% block header %}
+    <h1>Kategorie</h1>
+{% endblock header %}
+{% block content %}
+    <div>
+        <a class="btn btn-primary pull-right" href="{{ path('jkp_admin_category_new') }}"><span class="glyphicon glyphicon-plus"></span> Nowa kategoria</a>
+    </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nazwa</th>
+            <th>Status</th>
+            <th>Utworzona</th>
+            <th>&nbsp;</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+            <tr>
+                <td>{{ category.id }}</td>
+                <td>{{ category.name }}</td>
+                <td>{% if category.active %}<span class="label label-success">Aktywna</span>{% else %}<span class="label label-danger">Nieaktywna</span>{% endif %}</td>
+                <td>{{ category.createdAt | date('d-m-Y') }}</td>
+                <td class="actions">
+                    <form class="inline-block" action="{{ path('jkp_admin_category_switch', { 'id': category.id }) }}" method="post">
+                        <button type="submit" class="btn btn-{% if category.active %}default{% else %}primary{% endif %} btn-xs"><span class="glyphicon glyphicon-{% if category.active %}ban{% else %}ok{% endif %}-circle"></span> {% if category.active %}Dezaktywuj{% else %}Aktywuj{% endif %}</button>
+                    </form>
+                    <a class="btn btn-warning btn-xs" href="{{ path('jkp_admin_category_edit', { 'id': category.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edytuj</a>
+                    <form class="inline-block" action="{{ path('jkp_admin_category_delete', { 'id': category.id }) }}" method="post">
+                        <button type="submit" class="btn btn-danger btn-xs delete"><span class="glyphicon glyphicon-trash"></span> Usuń</button>
+                    </form>
+                </td>
+            </tr>
+        {% else %}
+            <tr class="table-empty-row">
+                <td colspan="7">
+                    <h4><span class="glyphicon glyphicon-info-sign"></span> Nie ma żadnych kategorii! Kliknij <a href="{{ path('jkp_admin_category_new') }}">tutaj</a> żeby dodać nową kategorię!</h4>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <script type="text/javascript">
+        $(function() {
+            $('button.delete').click(function() {
+                var $btn = $(this);
+
+                bootbox.dialog({
+                    message: 'Czy napewno chcesz usunąć tą kategorię?',
+                    title: 'Potwierdź decyzję',
+                    buttons: {
+                        no: {
+                            label: 'Nie',
+                            className: 'btn-default'
+                        },
+                        yes: {
+                            label: 'Tak',
+                            className: 'btn-danger',
+                            callback: function() {
+                                $btn.closest('form').submit();
+                            }
+                        }
+                    }
+                });
+
+                return false;
+            });
+        });
+    </script>
+{% endblock content %}

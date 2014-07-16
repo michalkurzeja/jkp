@@ -29,11 +29,11 @@
                     <td>{{ product.createdAt | date('d-m-Y') }}</td>
                     <td class="actions">
                         <form class="inline-block" action="{{ path('jkp_admin_product_switch', { 'id': product.id }) }}" method="post">
-                            <button type="submit" class="btn btn-{% if product.active %}default{% else %}primary{% endif %} btn-xs" href="#"><span class="glyphicon glyphicon-{% if product.active %}ban{% else %}ok{% endif %}-circle"></span> {% if product.active %}Dezaktywuj{% else %}Aktywuj{% endif %}</button>
+                            <button type="submit" class="btn btn-{% if product.active %}default{% else %}primary{% endif %} btn-xs"><span class="glyphicon glyphicon-{% if product.active %}ban{% else %}ok{% endif %}-circle"></span> {% if product.active %}Dezaktywuj{% else %}Aktywuj{% endif %}</button>
                         </form>
                         <a class="btn btn-warning btn-xs" href="{{ path('jkp_admin_product_edit', { 'id': product.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edytuj</a>
                         <form class="inline-block" action="{{ path('jkp_admin_product_delete', { 'id': product.id }) }}" method="post">
-                            <button type="submit" class="btn btn-danger btn-xs delete" href="#"><span class="glyphicon glyphicon-trash"></span> Usuń</button>
+                            <button type="submit" class="btn btn-danger btn-xs delete"><span class="glyphicon glyphicon-trash"></span> Usuń</button>
                         </form>
                     </td>
                 </tr>

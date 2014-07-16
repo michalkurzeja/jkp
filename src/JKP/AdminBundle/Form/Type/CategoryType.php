@@ -12,7 +12,7 @@ use Symfony\Component\Form\FormEvents;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 use Symfony\Component\Validator\Constraints\NotBlank;
 
-class ProductType extends AbstractType
+class CategoryType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -61,21 +61,9 @@ class ProductType extends AbstractType
         }
 
         $builder
-            ->add('slug', 'text', array(
-                'label' => 'Adres'
-            ))
-            ->add('featured', 'checkbox', array(
-                'label' => 'Na główną?',
-                'required' => false
-            ))
             ->add('active', 'checkbox', array(
-                'label' => 'Aktywny?',
+                'label' => 'Aktywna?',
                 'required' => false
-            ))
-            ->add('image', new FileImageType(), array(
-                'cascade_validation' => true,
-                'required' => false,
-                'data_class' => 'JKP\CoreBundle\Entity\File'
             ));
 
         $builder->addEventListener(FormEvents::POST_SUBMIT, function(FormEvent $event) use ($translations) {
@@ -87,7 +75,7 @@ class ProductType extends AbstractType
     {
         $resolver
             ->setDefaults(array(
-                'data_class' => 'JKP\CoreBundle\Entity\Product'
+                'data_class' => 'JKP\CoreBundle\Entity\Category'
             ))
             ->setRequired(array(
                 'translations'

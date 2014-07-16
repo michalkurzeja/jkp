@@ -15,7 +15,7 @@ class Translations
         $this->em = $em;
     }
 
-    public function setProductTranslations(Product $product, Form $translations)
+    public function setTranslations($entity, Form $translations)
     {
         $translations = $this->prepareTranslationsArray($translations);
 
@@ -24,22 +24,22 @@ class Translations
         foreach (Product::getValidLocale() as $locale) {
             $localeUpper = strtoupper($locale);
 
-            $repository->translate($product, 'name', $locale, $translations["name{$localeUpper}"])
-                ->translate($product, 'description', $locale, $translations["description{$localeUpper}"]);
+            $repository->translate($entity, 'name', $locale, $translations["name{$localeUpper}"])
+                ->translate($entity, 'description', $locale, $translations["description{$localeUpper}"]);
         }
     }
 
-    public function getProductTranslations(Product $product)
+    public function getTranslations($entity)
     {
         $translations = array();
 
         foreach (Product::getValidLocale() as $locale) {
-            $product->setTranslatableLocale($locale);
-            $this->em->refresh($product);
+            $entity->setTranslatableLocale($locale);
+            $this->em->refresh($entity);
 
             $translations[$locale] = array(
-                'name' => $product->getName(),
-                'description' => $product->getDescription()
+                'name' => $entity->getName(),
+                'description' => $entity->getDescription()
             );
         }
 

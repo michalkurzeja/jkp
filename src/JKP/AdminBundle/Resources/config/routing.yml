@@ -46,3 +46,30 @@ jkp_admin_product_delete_image:
     methods:  [POST]
     requirements:
         id:  \d+
+
+jkp_admin_category:
+    path: /category
+    defaults: { _controller: JKPAdminBundle:Category:index }
+
+jkp_admin_category_new:
+    path: /category/new
+    defaults: { _controller: JKPAdminBundle:Category:new }
+
+jkp_admin_category_edit:
+    path: /category/edit/{id}
+    defaults: { _controller: JKPAdminBundle:Category:edit }
+    requirements:
+        id:  \d+
+
+jkp_admin_category_switch:
+    path: /category/switch/{id}
+    defaults: { _controller: JKPAdminBundle:Category:switch }
+    methods:  [POST]
+    requirements:
+        id:  \d+
+
+jkp_admin_category_delete:
+    path: /category/delete/{id}
+    defaults: { _controller: JKPAdminBundle:Category:delete }
+    requirements:
+        id:  \d+
