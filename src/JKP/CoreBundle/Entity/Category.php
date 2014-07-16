@@ -2,6 +2,7 @@
 
 namespace JKP\CoreBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Translatable;
@@ -54,6 +55,14 @@ class Category implements Translatable
     private $active;
 
     /**
+     * @var ArrayCollection
+     *
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     * @ORM\OrderBy({"name" = "ASC"})
+     */
+    private $products;
+
+    /**
      * @Gedmo\Locale
      * Used locale to override Translation listener`s locale
      * this is not a mapped field of entity metadata, just a simple property
@@ -63,6 +72,7 @@ class Category implements Translatable
     public function __construct()
     {
         $this->setCreatedAt(new \DateTime());
+        $this->setProducts(new ArrayCollection());
     }
 
     /**
@@ -161,13 +171,58 @@ class Category implements Translatable
         return $this->active;
     }
 
+    /**
+     * @param \Doctrine\Common\Collections\ArrayCollection $products
+     */
+    public function setProducts($products)
+    {
+        $this->products = $products;
+
+        /** @var Product $product */
+        foreach ($products as $product) {
+            $product->setCategory($this);
+        }
+
+        return $this;
+    }
+
+    public function addProduct(Product $product)
+    {
+        $this->products->add($product);
+        $product->setCategory($this);
+
+        return $this;
+    }
+
+    public function removeProduct(Product $product)
+    {
+        $this->products->removeElement($product);
+        $product->setCategory(null);
+
+        return $this;
+    }
+
+    /**
+     * @return \Doctrine\Common\Collections\ArrayCollection
+     */
+    public function getProducts()
+    {
+        return $this->products;
+    }
+
     public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
+        return $this;
     }
 
     public static function getValidLocale()
     {
         return array('pl', 'en', 'hu');
+    }
+
+    public function __toString()
+    {
+        return $this->getName() ?: '';
     }
 }

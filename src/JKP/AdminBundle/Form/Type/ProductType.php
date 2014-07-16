@@ -2,6 +2,7 @@
 
 namespace JKP\AdminBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMInvalidArgumentException;
 use JKP\AdminBundle\DependencyInjection\Translations;
 use JKP\CoreBundle\Entity\Product;
@@ -61,6 +62,16 @@ class ProductType extends AbstractType
         }
 
         $builder
+            ->add('category', 'entity', array(
+                'label' => 'Kategoria',
+                'required' => 'false',
+                'class' => 'JKPCoreBundle:Category',
+                'empty_value' => '-- Brak --',
+                'query_builder' => function(EntityRepository $er) {
+                    return $er->createQueryBuilder('c')
+                        ->orderBy('c.name');
+                }
+            ))
             ->add('slug', 'text', array(
                 'label' => 'Adres'
             ))

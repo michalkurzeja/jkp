@@ -80,6 +80,13 @@ class Product implements Translatable
     private $image;
 
     /**
+     * @var Category
+     *
+     * @ORM\ManyToOne(targetEntity="Category", inversedBy="products", fetch="EAGER")
+     */
+    private $category;
+
+    /**
      * @Gedmo\Locale
      * Used locale to override Translation listener`s locale
      * this is not a mapped field of entity metadata, just a simple property
@@ -238,6 +245,23 @@ class Product implements Translatable
         return $this;
     }
 
+    /**
+     * @param \JKP\CoreBundle\Entity\Category $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+        return $this;
+    }
+
+    /**
+     * @return \JKP\CoreBundle\Entity\Category
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
     public function setTranslatableLocale($locale)
     {
         $this->locale = $locale;
@@ -254,5 +278,10 @@ class Product implements Translatable
             'message' => 'Ta wartość nie jest poprawnym adresem.',
             'pattern' => '/^[a-zA-Z0-9_\-\+]+$/'
         )));
+    }
+
+    public function __toString()
+    {
+        return $this->getName() ?: '';
     }
 }

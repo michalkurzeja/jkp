@@ -2,6 +2,7 @@
 
 namespace JKP\AdminBundle\Form\Type;
 
+use Doctrine\ORM\EntityRepository;
 use Doctrine\ORM\ORMInvalidArgumentException;
 use JKP\AdminBundle\DependencyInjection\Translations;
 use JKP\CoreBundle\Entity\Product;

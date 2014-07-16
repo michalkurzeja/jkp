@@ -11,6 +11,7 @@
         <tr>
             <th>Id</th>
             <th>Nazwa</th>
+            <th>Produkty</th>
             <th>Status</th>
             <th>Utworzona</th>
             <th>&nbsp;</th>
@@ -19,8 +20,9 @@
         <tbody>
         {% for category in categories %}
             <tr>
-                <td>{{ category.id }}</td>
+                <td>#{{ category.id }}</td>
                 <td>{{ category.name }}</td>
+                <td>{{ category.products | length }}</td>
                 <td>{% if category.active %}<span class="label label-success">Aktywna</span>{% else %}<span class="label label-danger">Nieaktywna</span>{% endif %}</td>
                 <td>{{ category.createdAt | date('d-m-Y') }}</td>
                 <td class="actions">

@@ -12,6 +12,7 @@
                 <th>Id</th>
                 <th>Nazwa</th>
                 <th>Adres</th>
+                <th>Kategoria</th>
                 <th>Status</th>
                 <th>Na głównej</th>
                 <th>Utworzony</th>
@@ -21,9 +22,10 @@
         <tbody>
             {% for product in products %}
                 <tr>
-                    <td>{{ product.id }}</td>
+                    <td>#{{ product.id }}</td>
                     <td>{{ product.name }}</td>
                     <td>{{ product.slug }}</td>
+                    <td><strong>{% if product.category %}{{ product.category }}{% else %}-{% endif %}</strong></td>
                     <td>{% if product.active %}<span class="label label-success">Aktywny</span>{% else %}<span class="label label-danger">Nieaktywny</span>{% endif %}</td>
                     <td>{% if product.featured %}<span class="label label-primary">Tak</span>{% else %}<span class="label label-default">Nie</span>{% endif %}</td>
                     <td>{{ product.createdAt | date('d-m-Y') }}</td>

@@ -35,7 +35,6 @@ class CategoryController extends Controller
 
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
-
                 $em->persist($category);
                 $em->flush();
 
@@ -63,7 +62,6 @@ class CategoryController extends Controller
 
             if ($form->isValid()) {
                 $em = $this->getDoctrine()->getManager();
-
                 $em->flush();
 
                 return $this->redirect($this->generateUrl('jkp_admin_category'));

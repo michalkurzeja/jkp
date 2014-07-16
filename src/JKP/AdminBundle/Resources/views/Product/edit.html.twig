@@ -37,6 +37,7 @@
                     </div>
                 </div>
                 <div class="field-wrap">{{ form_row(form.slug) }}</div>
+                <div class="field-wrap">{{ form_row(form.category) }}</div>
                 <div class="field-wrap">{{ form_row(form.featured) }}</div>
                 <div class="field-wrap">{{ form_row(form.active) }}</div>
                 <div class="field-wrap">{{ form_widget(form.image) }}</div>
@@ -65,6 +66,8 @@
 
     <script type="text/javascript">
         $(function() {
+            $('select').select2();
+
             $('.delete').click(function() {
                 $.post($(this).data('href'), function(response) {
                     if (response) {
