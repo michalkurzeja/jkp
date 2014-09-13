@@ -1,0 +1,179 @@
+body,
+html {
+    margin:0;
+    padding:0;
+    color:#000;
+    background: #879ca7;
+}
+
+a {
+    color: #f5f5f5;
+}
+
+a:hover {
+    color: #01588b;
+    text-decoration: none;
+}
+
+#wrapper-main {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#nav-top-wrap {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+#wrapper-sidemenu,
+#wrapper-content {
+    display: inline-block;
+}
+
+#wrapper-sidemenu {
+    width: 20%;
+    margin-right: -4px;
+    vertical-align: top;
+}
+
+#wrapper-content {
+    width: 80%;
+    background: white;
+}
+
+#wrapper-content {
+    border-width: 0 3px 3px 3px;
+    border-style: solid;
+    border-color: #01588b;
+}
+
+#nav-top,
+#nav-side {
+    background: #01588b;
+    color: white;
+}
+
+#nav-top {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#nav-top ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-around;
+}
+
+#nav-top li {
+    line-height: 60px;
+    text-align: center;
+    word-wrap: break-word;
+    width: 25%;
+}
+
+#nav-top,
+#nav-side {
+    padding: 1px;
+}
+
+#nav-top li,
+#nav-side li {
+    list-style-type: none;
+}
+
+#nav-top li.active,
+#nav-side li.active,
+#nav-top li:hover,
+#nav-side li:hover {
+    background: white;
+}
+
+#nav-top li.active a,
+#nav-side li.active a,
+#nav-top li a,
+#nav-side li a {
+    display: block;
+    font-weight: bold;
+}
+
+#nav-side h4 {
+    text-align: center;
+}
+
+#nav-side ul {
+    padding: 0;
+}
+
+#nav-side li a {
+    padding: 2px 10px;
+}
+
+.wrapper-content-inner {
+    padding: 5px;
+}
+
+.product-snippets {
+    display: flex;
+    align-items: stretch;
+}
+
+.product-snippet {
+    display: inline-block;
+    width: 251px;
+    height: 160px;
+    margin: 0 5px;
+    overflow: hidden;
+    border: 2px solid #002247;
+    border-radius: 5px;
+    position: relative;
+    text-align: center
+}
+
+.product-snippet:hover {
+    border-color: #01588b;
+}
+
+.product-snippet h4,
+.product-snippet .price {
+    position: absolute;
+    margin: 0;
+    background: rgba(255, 255, 255, 0.6);
+    width: 251px;
+    display: block;
+    font-size: 1.5em;
+}
+
+.product-snippet h4 {
+    font-weight: bold;
+    text-align: left;
+    padding: 10px;
+}
+
+.product-snippet a {
+    display: block;
+    color: #002247;
+}
+
+.product-snippet a:hover {
+    color: #01588b;
+}
+
+.product-snippet img {
+    min-height: 100%;
+    min-width: 251px;
+    width: 100%;
+    height: auto;
+}
+
+.product-snippet .price {
+    bottom: 0;
+    padding-right: 10px;
+    color: #002247;
+    text-align: right;
+}

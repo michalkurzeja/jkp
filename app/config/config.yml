@@ -29,6 +29,8 @@ framework:
 twig:
     debug:            "%kernel.debug%"
     strict_variables: "%kernel.debug%"
+    globals:
+        category_menu: @jkp.category_menu
 
 # Assetic Configuration
 assetic:

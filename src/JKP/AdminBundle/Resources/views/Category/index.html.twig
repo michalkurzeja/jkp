@@ -11,6 +11,7 @@
         <tr>
             <th>Id</th>
             <th>Nazwa</th>
+            <th>Adres</th>
             <th>Produkty</th>
             <th>Status</th>
             <th>Utworzona</th>
@@ -22,6 +23,7 @@
             <tr>
                 <td>#{{ category.id }}</td>
                 <td>{{ category.name }}</td>
+                <td>{{ category.slug }}</td>
                 <td>{{ category.products | length }}</td>
                 <td>{% if category.active %}<span class="label label-success">Aktywna</span>{% else %}<span class="label label-danger">Nieaktywna</span>{% endif %}</td>
                 <td>{{ category.createdAt | date('d-m-Y') }}</td>

@@ -7,3 +7,10 @@ jkp_core:
     prefix:   /{_locale}/
     requirements:
           _locale: pl|en|hu
+
+core_nolocale:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:redirect
+        route: jkp_core_homepage
+        permanent: true # this is for 301

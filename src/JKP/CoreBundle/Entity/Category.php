@@ -3,6 +3,7 @@
 namespace JKP\CoreBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 use Gedmo\Mapping\Annotation as Gedmo;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Translatable\Translatable;
@@ -12,6 +13,7 @@ use Gedmo\Translatable\Translatable;
  *
  * @ORM\Table()
  * @ORM\Entity(repositoryClass="JKP\CoreBundle\Entity\CategoryRepository")
+ * @UniqueEntity("slug")
  */
 class Category implements Translatable
 {
@@ -31,6 +33,13 @@ class Category implements Translatable
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="slug", type="string", length=255)
+     */
+    private $slug;
 
     /**
      * @var string
@@ -106,6 +115,28 @@ class Category implements Translatable
     public function getName()
     {
         return $this->name;
+    }
+
+    /**
+     * Set slug
+     *
+     * @param string $slug
+     * @return Category
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
+        return $this;
+    }
+
+    /**
+     * Get slug
+     *
+     * @return string
+     */
+    public function getSlug()
+    {
+        return $this->slug;
     }
 
     /**

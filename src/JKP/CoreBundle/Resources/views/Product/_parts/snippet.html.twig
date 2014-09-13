@@ -1,0 +1,7 @@
+<div class="product-snippet">
+    <a href="{{ path('jkp_core_product_show', {slug: product.slug}) }}">
+        <h4 class="product-name">{{ product.name }}</h4>
+        <img src="/{{ product.image.webPath }}">
+        <span class="price">{{ product.price }} zł</span>
+    </a>
+</div>

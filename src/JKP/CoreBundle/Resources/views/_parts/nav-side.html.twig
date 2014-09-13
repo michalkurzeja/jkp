@@ -1,0 +1,8 @@
+<aside id="nav-side">
+    <h4>Categories</h4>
+    <ul>
+    {% for category in category_menu.categories %}
+        <li><a href="{{ path('jkp_core_category_show', {slug: category.slug}) }}">{{ category.name }}</a></li>
+    {% endfor %}
+    </ul>
+</aside>

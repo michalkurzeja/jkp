@@ -2,6 +2,22 @@ jkp_core_homepage:
     path:     /
     defaults: { _controller: JKPCoreBundle:Default:index }
 
-jkp_core_products:
-    path:     /products
-    defaults: { _controller: JKPCoreBundle:Product:index }
+jkp_core_product_show:
+    path:     /{slug}
+    defaults: { _controller: JKPCoreBundle:Product:show }
+
+jkp_core_category_show:
+    path:     /category/{slug}
+    defaults: { _controller: JKPCoreBundle:Category:show }
+
+jkp_core_static_me:
+    path:     /me
+    defaults: { _controller: JKPCoreBundle:StaticPage:me }
+
+jkp_core_static_individual:
+    path:     /individual-orders
+    defaults: { _controller: JKPCoreBundle:StaticPage:individual }
+
+jkp_core_static_contact:
+    path:     /contact
+    defaults: { _controller: JKPCoreBundle:StaticPage:contact }

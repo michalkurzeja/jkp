@@ -31,6 +31,12 @@
             </div>
 
             <div class="tab-pane" id="general">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-3">
+                        <span class=" info-note">Dozwolone są <strong>litery</strong>, <strong>cyfry</strong> oraz znaki: <Strong>-</Strong>, <Strong>+</Strong>, <Strong>_</Strong></span>
+                    </div>
+                </div>
+                <div class="field-wrap">{{ form_row(form.slug) }}</div>
                 <div class="field-wrap">{{ form_row(form.active) }}</div>
             </div>
 

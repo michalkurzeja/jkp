@@ -62,6 +62,9 @@ class ProductType extends AbstractType
         }
 
         $builder
+            ->add('price', 'number', array(
+                'label' => 'Cena'
+            ))
             ->add('category', 'entity', array(
                 'label' => 'Kategoria',
                 'required' => 'false',

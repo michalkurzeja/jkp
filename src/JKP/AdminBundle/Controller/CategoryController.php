@@ -4,6 +4,7 @@ namespace JKP\AdminBundle\Controller;
 
 use JKP\AdminBundle\Form\Type\CategoryType;
 use JKP\CoreBundle\Entity\Category;
+use JKP\CoreBundle\Entity\Product;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
@@ -84,6 +85,11 @@ class CategoryController extends Controller
 
     public function deleteAction(Category $category)
     {
+        /** @var Product $product */
+        foreach ($category->getProducts() as $product) {
+            $product->setCategory(null);
+        }
+
         $this->getDoctrine()->getManager()->remove($category);
         $this->getDoctrine()->getManager()->flush();
 

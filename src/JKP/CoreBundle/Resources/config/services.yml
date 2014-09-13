@@ -5,3 +5,7 @@ services:
 #    jkp_core.example:
 #        class: %jkp_core.example.class%
 #        arguments: [@service_id, "plain_value", %parameter%]
+    jkp.category_menu:
+        class: JKP\CoreBundle\DependencyInjection\CategoryMenu
+        arguments:
+            - @doctrine.orm.entity_manager

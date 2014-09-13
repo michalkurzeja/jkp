@@ -52,6 +52,13 @@ class Product implements Translatable
     private $description;
 
     /**
+     * @var float
+     *
+     * @ORM\Column(name="price", type="float")
+     */
+    private $price;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="featured", type="boolean")
@@ -163,6 +170,23 @@ class Product implements Translatable
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * @param float $price
+     */
+    public function setPrice($price)
+    {
+        $this->price = $price;
+        return $this;
+    }
+
+    /**
+     * @return float
+     */
+    public function getPrice()
+    {
+        return $this->price;
     }
 
     /**

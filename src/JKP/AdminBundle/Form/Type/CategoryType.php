@@ -62,6 +62,9 @@ class CategoryType extends AbstractType
         }
 
         $builder
+            ->add('slug', 'text', array(
+                'label' => 'Adres'
+            ))
             ->add('active', 'checkbox', array(
                 'label' => 'Aktywna?',
                 'required' => false
@@ -93,6 +96,6 @@ class CategoryType extends AbstractType
      */
     public function getName()
     {
-        return 'jkp_product';
+        return 'jkp_category';
     }
 } 

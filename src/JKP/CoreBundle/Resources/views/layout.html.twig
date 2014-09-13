@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <title>jakurapazurem Admin</title>
+
+    {# CSS #}
+    <link href="/resources/bower_components/bootstrap/dist/css/bootstrap.min.css" type="text/css" rel="stylesheet" />
+
+    <link href="/resources/css/front.css" type="text/css" rel="stylesheet" />
+    {# /CSS #}
+
+    {# JS #}
+    <script src="/resources/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/resources/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    {# /JS #}
+</head>
+<body>
+    {% block body %}
+        <div id="wrapper-main">
+            <div id="nav-top-wrap">
+                {% block nav_top %}
+                    {% include 'JKPCoreBundle:_parts:nav-top.html.twig' %}
+                {% endblock nav_top %}
+            </div>
+
+            <div id="wrapper-columns">
+                <div id="wrapper-sidemenu">
+                    {% block nav_side %}
+                        {% include 'JKPCoreBundle:_parts:nav-side.html.twig' %}
+                    {% endblock nav_side %}
+                </div>
+                <div id="wrapper-content">
+                    {% block header %}
+                    {% endblock header %}
+
+                    {% block content %}
+                    {% endblock content %}
+                </div>
+            </div>
+
+            <div>
+                {% block footer %}
+                <section id="footer">
+                    <a href="{{ path('jkp_core_homepage') }}">jakurapazurem.pl</a>
+                </section>
+                {% endblock footer %}
+            </div>
+        </div>
+    {% endblock body %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'JKPCoreBundle::layout.html.twig' %}
+{% block content %}
+    <div class="wrapper-content-inner">
+        <section>
+            <h1>{{ category.name }}</h1>
+            <p>{{ category.description }}</p>
+        </section>
+        <section class="product-snippets">
+            {% for product in category.products %}
+                {% include('JKPCoreBundle:Product/_parts:snippet.html.twig') with {product: product} %}
+            {% endfor %}
+        </section>
+    </div>
+{% endblock content %}
