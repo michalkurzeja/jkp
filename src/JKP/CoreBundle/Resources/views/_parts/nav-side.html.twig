@@ -1,8 +1,8 @@
 <aside id="nav-side">
-    <h4>Categories</h4>
+    <h4><span class="glyphicon glyphicon-th-list"></span> {{ 'categories' | trans }}</h4>
     <ul>
     {% for category in category_menu.categories %}
-        <li><a href="{{ path('jkp_core_category_show', {slug: category.slug}) }}">{{ category.name }}</a></li>
+        <li class={{ app.request.get('slug') == category.slug ? 'active' : '' }}><a href="{{ path('jkp_core_category_show', {slug: category.slug}) }}">{{ category.name }}</a></li>
     {% endfor %}
     </ul>
 </aside>

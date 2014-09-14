@@ -1,5 +1,25 @@
 {% extends 'JKPCoreBundle::layout.html.twig' %}
 {% block content %}
-    <p>{{ product.name }}</p>
-    <p>{{ product.description }}</p>
-{% endblock %}
+    <div class="wrapper-content-inner">
+        <section class="content-top">
+            <div class="text-wrap">
+                <div class="product-top">
+                    <h1 class="content-header">
+                        {{ product.name }}
+                        <span class="price"><span class="glyphicon glyphicon-tag"></span> {{ product.price }} zł</span>
+                    </h1>
+                    <div class="content-description">
+                        {% if product.image %}<img src="/{{ product.imagePath }}" class="product-image">{% endif %}
+                        <p>{{ product.description }}</p>
+                    </div>
+                </div>
+                <div class="product-bottom">
+                    <div class="buttons">
+                        <a class="link-return" href="{{ path('jkp_core_category_show', {slug: product.category.slug}) }}"><span class="glyphicon glyphicon-chevron-left"></span> {{ 'return' | trans }}</a>
+                        <a class="link-order" href="{{ path('jkp_core_static_individual') }}">{{ 'order' | trans }} <span class="glyphicon glyphicon-chevron-right"></span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+{% endblock content %}

@@ -16,17 +16,16 @@
 </head>
 <body>
     {% block body %}
+        <div id="nav-top-wrap">
+            {% block nav_top %}
+                {% include 'JKPCoreBundle:_parts:nav-top.html.twig' %}
+            {% endblock nav_top %}
+        </div>
         <div id="wrapper-main">
-            <div id="nav-top-wrap">
-                {% block nav_top %}
-                    {% include 'JKPCoreBundle:_parts:nav-top.html.twig' %}
-                {% endblock nav_top %}
-            </div>
-
             <div id="wrapper-columns">
                 <div id="wrapper-sidemenu">
                     {% block nav_side %}
-                        {% include 'JKPCoreBundle:_parts:nav-side.html.twig' %}
+                        {% include('JKPCoreBundle:_parts:nav-side.html.twig') %}
                     {% endblock nav_side %}
                 </div>
                 <div id="wrapper-content">

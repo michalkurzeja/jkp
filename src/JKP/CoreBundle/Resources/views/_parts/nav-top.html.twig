@@ -1,8 +1,8 @@
 <nav id="nav-top">
     <ul>
         <li><a href="{{ path('jkp_core_homepage') }}">JAKURAPAZUREM</a></li>
-        <li><a href="{{ path('jkp_core_static_me') }}">o mnie</a></li>
-        <li><a href="{{ path('jkp_core_static_individual') }}">zamówienia indywidualne</a></li>
-        <li><a href="{{ path('jkp_core_static_contact') }}">kontakt</a></li>
+        <li><a href="{{ path('jkp_core_static_me') }}"><span class="glyphicon glyphicon-user"></span> {{ 'me' | trans }}</a></li>
+        <li><a href="{{ path('jkp_core_static_individual') }}"><span class="glyphicon glyphicon-shopping-cart"></span> {{ 'individual' | trans }}</a></li>
+        <li><a href="{{ path('jkp_core_static_contact') }}"><span class="glyphicon glyphicon-envelope"></span> {{ 'contact' | trans }}</a></li>
     </ul>
 </nav>

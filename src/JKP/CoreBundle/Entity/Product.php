@@ -263,6 +263,13 @@ class Product implements Translatable
         return $this->image;
     }
 
+    public function getImagePath()
+    {
+        return $this->image
+            ? $this->image->getWebPath()
+            : 'resources/img/no-image.jpg';
+    }
+
     public function removeImage()
     {
         $this->image = null;

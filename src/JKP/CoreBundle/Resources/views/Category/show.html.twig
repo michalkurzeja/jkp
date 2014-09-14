@@ -1,10 +1,13 @@
 {% extends 'JKPCoreBundle::layout.html.twig' %}
 {% block content %}
     <div class="wrapper-content-inner">
-        <section>
-            <h1>{{ category.name }}</h1>
-            <p>{{ category.description }}</p>
+        <section class="content-top">
+            <div class="text-wrap">
+                <h1 class="content-header">{{ category.name }}</h1>
+                <p class="content-description">{{ category.description }}</p>
+            </div>
         </section>
+        <hr>
         <section class="product-snippets">
             {% for product in category.products %}
                 {% include('JKPCoreBundle:Product/_parts:snippet.html.twig') with {product: product} %}
